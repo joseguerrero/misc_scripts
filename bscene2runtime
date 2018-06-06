@@ -1,0 +1,12 @@
+# Script to export blender scenes as runtime executables
+
+# TODO:
+# - Make it more abstract
+# - It should accept parameters: path of the input scene, path of the generated runtime
+
+import bpy
+import sys
+bpy.ops.wm.open_mainfile(filepath = "/home/usuario/workspace/sembrando-para-el-futuro/interprete/intérprete.blend")
+bpy.ops.wm.addon_enable(module="game_engine_save_as_runtime")
+bpy.ops.wm.save_as_runtime(player_path="/opt/blender/blenderplayer",  filepath="/home/usuario/Desktop/runtime", copy_python = True, overwrite_lib = False)
+sys.exit()
